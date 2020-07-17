@@ -16,11 +16,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var content = [
-      Image.network(
-        'https://avatars0.githubusercontent.com/u/53415956?s=460&u=36af1e2bed940f8d45769feef50cb564cec69c29&v=4',
-        fit: BoxFit.cover,
-        alignment: Alignment.center,
-        width: 300,
+      CircleAvatar(
+        backgroundColor: Colors.transparent,
+        radius: 150,
+        backgroundImage: NetworkImage(
+          'https://avatars0.githubusercontent.com/u/53415956?s=460&u=36af1e2bed940f8d45769feef50cb564cec69c29&v=4',
+        ),
       ),
       AnimatedContainer(
         width: width > 650 ? width * 0.4 : width,
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
                   TextSpan(
-                    text: 'Hey, I\'m\n',
+                    text: 'Hey, I\'m ',
                     style: GoogleFonts.novaSquare(
                         shadows: [
                           Shadow(color: Colors.blueGrey, blurRadius: 1)
@@ -72,24 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
-                      onPressed: () => _launchURL(
-                          'https://www.facebook.com/ayushkejariwal.ayush'),
-                      icon: Icon(
-                        LineAwesomeIcons.facebook,
-                        size: 35,
-                        color: Colors.blueAccent,
-                      ),
-                      tooltip: 'Facebook',
-                    ),
-                    IconButton(
                       onPressed: () =>
-                          _launchURL('https://www.instagram.com/a_kejariwal/'),
+                          _launchURL('https://www.github.com/KejariwalAyush'),
                       icon: Icon(
-                        LineAwesomeIcons.instagram,
+                        LineAwesomeIcons.github_square,
                         size: 35,
-                        color: Colors.orangeAccent,
                       ),
-                      tooltip: 'Instagram',
+                      tooltip: 'Github',
                     ),
                     IconButton(
                       onPressed: () => _launchURL(
@@ -103,12 +93,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     IconButton(
                       onPressed: () =>
-                          _launchURL('https://www.github.com/KejariwalAyush'),
+                          _launchURL('https://www.instagram.com/a_kejariwal/'),
                       icon: Icon(
-                        LineAwesomeIcons.github_square,
+                        LineAwesomeIcons.instagram,
                         size: 35,
+                        color: Colors.orangeAccent,
                       ),
-                      tooltip: 'Github',
+                      tooltip: 'Instagram',
+                    ),
+                    IconButton(
+                      onPressed: () => _launchURL(
+                          'https://www.facebook.com/ayushkejariwal.ayush'),
+                      icon: Icon(
+                        LineAwesomeIcons.facebook,
+                        size: 35,
+                        color: Colors.blueAccent,
+                      ),
+                      tooltip: 'Facebook',
                     ),
                     IconButton(
                       onPressed: () =>
@@ -163,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              width > 400
+              width > 500
                   ? SizedBox(
                       // height: 30,
                       )
@@ -188,13 +189,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   // if (width > 800)
                   // TODO: change background here
-                  Image.network(
-                    'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
-                    fit: BoxFit.cover,
-                    width: width,
-                    height: MediaQuery.of(context).size.height,
-                    // scale: 30,
-                    alignment: Alignment.center,
+                  RotatedBox(
+                    quarterTurns: width > 600 ? 0 : 2,
+                    child: Image.network(
+                      'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
+                      fit: width > 600 ? BoxFit.cover : BoxFit.fitHeight,
+                      gaplessPlayback: true,
+                      width: width,
+                      height: MediaQuery.of(context).size.height,
+                      // scale: 30,
+                      alignment: Alignment.center,
+                    ),
                   ),
                   Column(
                     children: [
