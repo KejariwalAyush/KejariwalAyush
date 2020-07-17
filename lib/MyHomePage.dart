@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       AnimatedContainer(
-        width: width > 650 ? width * 0.4 : width,
+        width: width > 670 ? width * 0.4 : width,
         duration: Duration(seconds: 1),
         // color: Colors.amberAccent,
         curve: Curves.easeIn,
@@ -153,13 +153,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     ];
     return Scaffold(
-      // appBar: width > 400
-      //     ? AppBar(
-      //         toolbarHeight: 0,
-      //       )
-      //     : SliverAppBar(
-      //         leading: Icon(Icons.menu),
-      //       ),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -190,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // if (width > 800)
                   // TODO: change background here
                   RotatedBox(
-                    quarterTurns: width > 600 ? 0 : 2,
+                    quarterTurns: width > 650 ? 0 : 2,
                     child: Image.network(
                       'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
                       fit: width > 600 ? BoxFit.cover : BoxFit.fitHeight,
@@ -206,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(
                         height: 20,
                       ),
-                      width > 665
+                      width > 670
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
