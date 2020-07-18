@@ -1,8 +1,12 @@
+import 'dart:math';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kejariwal_ayush/certificates.dart';
+import 'package:kejariwal_ayush/projects.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -114,15 +118,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       tooltip: 'Facebook',
                     ),
-                    // IconButton(
-                    //   onPressed: () =>
-                    //       _launchURL('mailto:iteraio2020@gmail.com'),
-                    //   icon: Icon(
-                    //     LineAwesomeIcons.envelope,
-                    //     size: 35,
-                    //   ),
-                    //   tooltip: 'Mail',
-                    // ),
+                    Transform.rotate(
+                      angle: 7 * pi / 4,
+                      child: IconButton(
+                        onPressed: () => _launchURL('https://t.me/a_kejriwal'),
+                        icon: Icon(
+                          LineAwesomeIcons.send_o,
+                          size: 35,
+                          color: Colors.blue[300],
+                        ),
+                        tooltip: 'Telegram(VPN)',
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -193,6 +200,42 @@ class _MyHomePageState extends State<MyHomePage> {
         )
     ];
 
+    var buttons = [
+      Hero(
+        tag: 'projects',
+        child: RaisedButton(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Projects(),
+            ),
+          ),
+          animationDuration: Duration(milliseconds: 500),
+          color: Colors.black54,
+          hoverElevation: 30,
+          hoverColor: Colors.amber,
+          elevation: 5,
+          child: Text('Projects'),
+        ),
+      ),
+      Hero(
+        tag: 'certificates',
+        child: RaisedButton(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Certificates(),
+            ),
+          ),
+          animationDuration: Duration(milliseconds: 500),
+          color: Colors.black54,
+          hoverElevation: 30,
+          hoverColor: Colors.amber,
+          elevation: 5,
+          child: Text('Certificates'),
+        ),
+      ),
+    ];
     var content2 = [
       Container(
         padding: EdgeInsets.all(10),
@@ -247,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
         curve: Curves.easeIn,
         padding: EdgeInsets.all(10),
         width: width > 670 ? width * 0.3 : width * 0.5,
-        height: 200, //width > 670 ? 200 : 300,
+        height: width > 670 ? 200 : 250,
         decoration: new BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.white10,
@@ -257,17 +300,18 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              width > 670
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: buttons,
+                    )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: buttons,
+                    ),
               RaisedButton(
-                onPressed: () {},
-                animationDuration: Duration(milliseconds: 500),
-                color: Colors.black54,
-                hoverElevation: 30,
-                hoverColor: Colors.amber,
-                elevation: 5,
-                child: Text('Projects'),
-              ),
-              RaisedButton(
-                onPressed: () {},
+                onPressed: () => _launchURL(
+                    'mailto:kejayush29@gmail.com?subject=Want%20to%20have%20Coffee%20with%20you!!&body=I%20viewed%20your%20site%20and%20you%20did%20great%20work%20AYUSH!'),
                 animationDuration: Duration(milliseconds: 500),
                 color: Colors.black54,
                 hoverElevation: 30,
@@ -285,7 +329,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Programming\nLanguages : ',
+                      'Programming\nLanguages: ',
                       style: GoogleFonts.novaSquare(
                         color: Colors.white,
                       ),
@@ -312,27 +356,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // width > 500
-              //     ? SizedBox(
-              //         // height: 30,
-              //         )
-              //     : AppBar(
-              //         leading: Icon(Icons.menu),
-              //         shadowColor: Colors.transparent,
-              //         elevation: 0,
-              //         // bottomOpacity: 100,
-              //         actions: [
-              //           Padding(
-              //             padding: const EdgeInsets.all(8.0),
-              //             child: Center(
-              //               child: Text(
-              //                 'Source Code',
-              //                 style: GoogleFonts.novaSquare(),
-              //               ),
-              //             ),
-              //           )
-              //         ],
-              //       ),
               Stack(
                 children: [
                   // if (width > 800)
@@ -414,57 +437,53 @@ class _MyHomePageState extends State<MyHomePage> {
                         thickness: 2,
                         color: Colors.white60,
                       ),
-                      RichText(
-                        overflow: TextOverflow.visible,
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                            text: '© Ayush Kejariwal 2020  |  ',
-                            style: GoogleFonts.novaSquare(
-                              color: Colors.white,
-                            ),
-                            children: [
-                              TextSpan(
-                                  text: 'Give a Feedback',
-                                  style: GoogleFonts.novaSquare(
-                                      color: Colors.amber,
-                                      decoration: TextDecoration.underline,
-                                      decorationStyle:
-                                          TextDecorationStyle.dotted),
-                                  recognizer: new TapGestureRecognizer()
-                                    ..onTap = () {
-                                      _launchURL(
-                                          'https://support.github.com/contact/feedback?category=profile&subject=Profile+README');
-                                    }),
-                              TextSpan(
-                                text: '  |  ',
-                                style: GoogleFonts.novaSquare(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              TextSpan(
-                                  text: 'CODEX',
-                                  style: GoogleFonts.novaSquare(
-                                      color: Colors.amber,
-                                      decoration: TextDecoration.underline,
-                                      decorationStyle:
-                                          TextDecorationStyle.dotted),
-                                  recognizer: new TapGestureRecognizer()
-                                    ..onTap = () {
-                                      _launchURL(
-                                          'https://codex-iter.github.io/');
-                                    })
-                            ]),
-                      ),
-                      if (width < 670)
-                        SizedBox(
-                          height: 10,
-                        )
                     ],
                   ),
                 ],
               ),
             ],
           ),
+        ),
+      ),
+      bottomSheet: Center(
+        heightFactor: 1,
+        child: RichText(
+          overflow: TextOverflow.visible,
+          textAlign: TextAlign.center,
+          text: TextSpan(
+              text: '© Ayush Kejariwal 2020  |  ',
+              style: GoogleFonts.novaSquare(
+                color: Colors.white,
+              ),
+              children: [
+                TextSpan(
+                    text: 'Give a Feedback',
+                    style: GoogleFonts.novaSquare(
+                        color: Colors.amber,
+                        decoration: TextDecoration.underline,
+                        decorationStyle: TextDecorationStyle.dotted),
+                    recognizer: new TapGestureRecognizer()
+                      ..onTap = () {
+                        _launchURL(
+                            'https://support.github.com/contact/feedback?category=profile&subject=Profile+README');
+                      }),
+                TextSpan(
+                  text: '  |  ',
+                  style: GoogleFonts.novaSquare(
+                    color: Colors.white,
+                  ),
+                ),
+                TextSpan(
+                    text: 'CODEX',
+                    style: GoogleFonts.novaSquare(
+                        color: Colors.amber,
+                        decoration: TextDecoration.underline,
+                        decorationStyle: TextDecorationStyle.dotted),
+                    recognizer: new TapGestureRecognizer()
+                      ..onTap = () {
+                        _launchURL('https://codex-iter.github.io/');
+                      })
+              ]),
         ),
       ),
     );
