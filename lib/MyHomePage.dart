@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,6 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               RichText(
                 overflow: TextOverflow.visible,
@@ -130,18 +133,39 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text(
                     "I Love to ",
                     style: GoogleFonts.josefinSans(
-                      fontSize: 30.0,
+                      fontSize: 25.0,
                     ),
                   ),
                   RotateAnimatedTextKit(
                     text: ["CODE.", "DESIGN.", "DEBUG."],
                     isRepeatingAnimation: true, repeatForever: true,
                     textStyle: GoogleFonts.josefinSans(
-                      fontSize: 30.0,
+                      fontSize: 25.0,
                     ),
                     textAlign: TextAlign.justify,
                     // alignment:
                     //     AlignmentDirectional.topStart // or Alignment.topLeft
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RotateAnimatedTextKit(
+                    text: [
+                      "“Talk is cheap. Show me the code.”",
+                      "“I'm not a great programmer;\nI'm just a good programmer with great habits.”",
+                      "“Good design adds value faster than it adds cost.”",
+                      "“There are two ways to write error-free programs;\nonly the third one works.”"
+                    ],
+                    duration: Duration(seconds: 8),
+                    isRepeatingAnimation: true,
+                    repeatForever: true,
+                    textStyle: GoogleFonts.josefinSans(
+                      fontSize: 15.0,
+                    ),
+                    textAlign: TextAlign.center,
+                    alignment: Alignment.center,
                   ),
                 ],
               ),
@@ -250,7 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 hoverColor: Colors.amber,
                 elevation: 5,
                 child: Text(
-                  'Contact me📧',
+                  'Contact me 📧',
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -265,6 +289,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: GoogleFonts.novaSquare(
                         color: Colors.white,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -313,10 +338,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   // if (width > 800)
                   // TODO: change background here
                   width > 670
-                      ? Image.network(
-                          'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
-                          fit: width > 600 ? BoxFit.cover : BoxFit.fitHeight,
-                          repeat: ImageRepeat.repeatY,
+                      ? Image.asset(
+                          'assets/background.jpg',
+                          // 'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
+                          fit: BoxFit.fill,
+                          // repeat: ImageRepeat.repeatY,
                           gaplessPlayback: true,
                           width: width,
                           height: MediaQuery.of(context).size.height,
@@ -325,34 +351,33 @@ class _MyHomePageState extends State<MyHomePage> {
                         )
                       : Column(
                           children: [
-                            Image.network(
-                              'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
-                              fit: BoxFit.fitHeight,
-                              repeat: ImageRepeat.repeatY,
+                            Image.asset(
+                              'assets/background.jpg',
+                              // 'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
+                              fit: BoxFit.fill,
+                              // repeat: ImageRepeat.repeatY,
                               gaplessPlayback: true,
                               width: width,
                               height: MediaQuery.of(context).size.height,
                               // scale: 30,
                               alignment: Alignment.center,
                             ),
-                            RotatedBox(
-                              quarterTurns: 1,
-                              child: Image.network(
-                                'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
-                                fit: BoxFit.fitHeight,
-                                repeat: ImageRepeat.repeatY,
-                                gaplessPlayback: true,
-                                width: width,
-                                height: MediaQuery.of(context).size.height,
-                                // scale: 30,
-                                alignment: Alignment.center,
-                              ),
+                            Image.asset(
+                              'assets/background2.jpg',
+                              // 'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
+                              fit: BoxFit.fill,
+                              // repeat: ImageRepeat.repeatY,
+                              gaplessPlayback: true,
+                              width: width,
+                              height: MediaQuery.of(context).size.height,
+                              // scale: 30,
+                              alignment: Alignment.center,
                             )
                           ],
                         ),
                   Column(
-                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
                         height: 20,
@@ -369,7 +394,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               children: content,
                             ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       width > 670
                           ? Row(
@@ -382,6 +407,58 @@ class _MyHomePageState extends State<MyHomePage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: content2,
                             ),
+                      SizedBox(
+                        height: width > 670 ? 10 : 50,
+                      ),
+                      Divider(
+                        thickness: 2,
+                        color: Colors.white60,
+                      ),
+                      RichText(
+                        overflow: TextOverflow.visible,
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                            text: '© Ayush Kejariwal 2020  |  ',
+                            style: GoogleFonts.novaSquare(
+                              color: Colors.white,
+                            ),
+                            children: [
+                              TextSpan(
+                                  text: 'Give a Feedback',
+                                  style: GoogleFonts.novaSquare(
+                                      color: Colors.amber,
+                                      decoration: TextDecoration.underline,
+                                      decorationStyle:
+                                          TextDecorationStyle.dotted),
+                                  recognizer: new TapGestureRecognizer()
+                                    ..onTap = () {
+                                      _launchURL(
+                                          'https://support.github.com/contact/feedback?category=profile&subject=Profile+README');
+                                    }),
+                              TextSpan(
+                                text: '  |  ',
+                                style: GoogleFonts.novaSquare(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              TextSpan(
+                                  text: 'CODEX',
+                                  style: GoogleFonts.novaSquare(
+                                      color: Colors.amber,
+                                      decoration: TextDecoration.underline,
+                                      decorationStyle:
+                                          TextDecorationStyle.dotted),
+                                  recognizer: new TapGestureRecognizer()
+                                    ..onTap = () {
+                                      _launchURL(
+                                          'https://codex-iter.github.io/');
+                                    })
+                            ]),
+                      ),
+                      if (width < 670)
+                        SizedBox(
+                          height: 10,
+                        )
                     ],
                   ),
                 ],
