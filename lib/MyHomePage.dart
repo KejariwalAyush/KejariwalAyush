@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 textAlign: TextAlign.center,
                 repeatForever: false,
                 isRepeatingAnimation: false,
-                speed: Duration(milliseconds: 500),
+                speed: Duration(milliseconds: 250),
                 textStyle: GoogleFonts.novaSquare(
                     shadows: [Shadow(color: Colors.blueGrey, blurRadius: 2)],
                     color: Colors.white,
@@ -111,20 +111,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       tooltip: 'Facebook',
                     ),
-                    IconButton(
-                      onPressed: () =>
-                          _launchURL('mailto:iteraio2020@gmail.com'),
-                      icon: Icon(
-                        LineAwesomeIcons.envelope,
-                        size: 35,
-                      ),
-                      tooltip: 'Mail',
-                    ),
+                    // IconButton(
+                    //   onPressed: () =>
+                    //       _launchURL('mailto:iteraio2020@gmail.com'),
+                    //   icon: Icon(
+                    //     LineAwesomeIcons.envelope,
+                    //     size: 35,
+                    //   ),
+                    //   tooltip: 'Mail',
+                    // ),
                   ],
                 ),
               ),
               Row(
-                // mainAxisSize: MainAxisSize.c,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   // SizedBox(width: 20.0, height: 100.0),
@@ -134,7 +133,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 30.0,
                     ),
                   ),
-                  // SizedBox(width: 20.0, height: 100.0),
                   RotateAnimatedTextKit(
                     text: ["CODE.", "DESIGN.", "DEBUG."],
                     isRepeatingAnimation: true, repeatForever: true,
@@ -152,49 +150,209 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     ];
+
+    // LAnguages List
+    var languages = [
+      for (var i in lang)
+        Container(
+          // width: 30,
+          // height: 30,
+          child: IconButton(
+            icon: Image.asset(
+              i,
+              fit: BoxFit.contain,
+              width: 30,
+            ),
+            onPressed: () {},
+            tooltip: i.split('/')[2].split('.')[0].toUpperCase(),
+          ),
+        )
+    ];
+
+    var content2 = [
+      Container(
+        padding: EdgeInsets.all(10),
+        width: width > 670 ? width * 0.3 : width * 0.5,
+        height: 200,
+        decoration: new BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white10,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'About Me 😎',
+                style: GoogleFonts.novaSquare(
+                  color: Colors.white,
+                ),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.white54,
+              ),
+              TypewriterAnimatedTextKit(
+                text: [
+                  'I\'m a Student at ITER, SOA University, pursuing B.Tech in Computer Science & Engineering and a Flutter developer.\n'
+                      '\nInspired by Codex and now a Student Coordinator at Codex.'
+                ],
+                textAlign: TextAlign.start,
+                repeatForever: false,
+                isRepeatingAnimation: false,
+                speed: Duration(milliseconds: 100),
+                textStyle: GoogleFonts.novaSquare(
+                  shadows: [Shadow(color: Colors.blueGrey, blurRadius: 2)],
+                  color: Colors.white,
+                  // fontStyle: FontStyle.italic
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      SizedBox(
+        height: 20,
+        width: 20,
+      ),
+      AnimatedContainer(
+        duration: Duration(
+          seconds: 1,
+        ),
+        curve: Curves.easeIn,
+        padding: EdgeInsets.all(10),
+        width: width > 670 ? width * 0.3 : width * 0.5,
+        height: 200, //width > 670 ? 200 : 300,
+        decoration: new BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white10,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              RaisedButton(
+                onPressed: () {},
+                animationDuration: Duration(milliseconds: 500),
+                color: Colors.black54,
+                hoverElevation: 30,
+                hoverColor: Colors.amber,
+                elevation: 5,
+                child: Text('Projects'),
+              ),
+              RaisedButton(
+                onPressed: () {},
+                animationDuration: Duration(milliseconds: 500),
+                color: Colors.black54,
+                hoverElevation: 30,
+                hoverColor: Colors.amber,
+                elevation: 5,
+                child: Text(
+                  'Contact me📧',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Programming\nLanguages : ',
+                      style: GoogleFonts.novaSquare(
+                        color: Colors.white,
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: languages,
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      )
+    ];
     return Scaffold(
       body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              width > 500
-                  ? SizedBox(
-                      // height: 30,
-                      )
-                  : AppBar(
-                      leading: Icon(Icons.menu),
-                      shadowColor: Colors.transparent,
-                      elevation: 0,
-                      // bottomOpacity: 100,
-                      actions: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: Text(
-                              'About',
-                              style: GoogleFonts.novaSquare(),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
+              // width > 500
+              //     ? SizedBox(
+              //         // height: 30,
+              //         )
+              //     : AppBar(
+              //         leading: Icon(Icons.menu),
+              //         shadowColor: Colors.transparent,
+              //         elevation: 0,
+              //         // bottomOpacity: 100,
+              //         actions: [
+              //           Padding(
+              //             padding: const EdgeInsets.all(8.0),
+              //             child: Center(
+              //               child: Text(
+              //                 'Source Code',
+              //                 style: GoogleFonts.novaSquare(),
+              //               ),
+              //             ),
+              //           )
+              //         ],
+              //       ),
               Stack(
                 children: [
                   // if (width > 800)
                   // TODO: change background here
-                  RotatedBox(
-                    quarterTurns: width > 650 ? 0 : 2,
-                    child: Image.network(
-                      'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
-                      fit: width > 600 ? BoxFit.cover : BoxFit.fitHeight,
-                      gaplessPlayback: true,
-                      width: width,
-                      height: MediaQuery.of(context).size.height,
-                      // scale: 30,
-                      alignment: Alignment.center,
-                    ),
-                  ),
+                  width > 670
+                      ? Image.network(
+                          'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
+                          fit: width > 600 ? BoxFit.cover : BoxFit.fitHeight,
+                          repeat: ImageRepeat.repeatY,
+                          gaplessPlayback: true,
+                          width: width,
+                          height: MediaQuery.of(context).size.height,
+                          // scale: 30,
+                          alignment: Alignment.center,
+                        )
+                      : Column(
+                          children: [
+                            Image.network(
+                              'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
+                              fit: BoxFit.fitHeight,
+                              repeat: ImageRepeat.repeatY,
+                              gaplessPlayback: true,
+                              width: width,
+                              height: MediaQuery.of(context).size.height,
+                              // scale: 30,
+                              alignment: Alignment.center,
+                            ),
+                            RotatedBox(
+                              quarterTurns: 1,
+                              child: Image.network(
+                                'https://static.vecteezy.com/system/resources/previews/000/184/640/original/triangle-abstract-black-background-vector.jpg',
+                                fit: BoxFit.fitHeight,
+                                repeat: ImageRepeat.repeatY,
+                                gaplessPlayback: true,
+                                width: width,
+                                height: MediaQuery.of(context).size.height,
+                                // scale: 30,
+                                alignment: Alignment.center,
+                              ),
+                            )
+                          ],
+                        ),
                   Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       SizedBox(
                         height: 20,
@@ -209,6 +367,20 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: content,
+                            ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      width > 670
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: content2,
+                            )
+                          : Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: content2,
                             ),
                     ],
                   ),
@@ -231,3 +403,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return;
   }
 }
+
+var lang = [
+  'assets/lang/java.png',
+  'assets/lang/python.png',
+  'assets/lang/flutter.png',
+  'assets/lang/dart.png',
+  'assets/lang/json.png'
+];
