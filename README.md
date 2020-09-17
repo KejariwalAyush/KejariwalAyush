@@ -1,17 +1,17 @@
 ### Hi there 👋
 
-## Visit My Page : https://kejariwalayush.github.io/#/
-
 ## I'm Ayush Kejariwal
 
+## Visit My Protfolio Page : https://kejariwalayush.github.io/#/
 
 :smiley: Member of **[CODEX](https://github.com/codex-iter)** 
 
-👨‍🎓 B.Tech in information technology from the **[ITER, S.O.A.U.](https://www.soa.ac.in/iter)** 
+👨‍🎓 B.Tech in Computer Science from the **[ITER, S.O.A.U.](https://www.soa.ac.in/iter)** 
 
 ### About me :eyes:
 
 - :dart: Flutter Developer  
+- 📜 Published a research paper on Springer in Information Security **[Link](https://link.springer.com/chapter/10.1007/978-981-15-6202-0_65)** 
 - :heart: Now a Student Co-ordinator at **[CODEX](https://github.com/codex-iter)**
 - :e-mail: Ask me about anything ; **[kejayush29@gmail.com](kejayush29@gmail.com)**
 
@@ -29,10 +29,7 @@
 
 ### Reach out to me 👓
 
-|  <a href="https://kejariwalayush.github.io/"><img src="https://icon-library.net//images/icon-programmer/icon-programmer-14.jpg" width="100px" height="100px" /></a> |
-|:---------------------------------------------------------------------------------------------------------------------------------------: |
-|       **[Ayush Kejariwal](https://kejariwalayush.github.io/)**                                                                                |
-|<a href="https://twitter.com/a_kejariwal?s=09"><img src="https://i.ibb.co/kmgQVyW/twitter.png" width="32px" height="32px"></a> <a href="https://www.github.com/KejariwalAyush"><img src="https://cdn.iconscout.com/icon/free/png-256/github-108-438008.png" width="32px" height="32px"></a> <a href="https://www.facebook.com/ayushkejariwal.ayush"><img src="https://i.ibb.co/zmYNW4p/facebook.png" width="32px" height="32px"></a> <a href="https://www.linkedin.com/in/ayush-kejariwal-1923a2191/"><img src="https://i.ibb.co/Kx2GSrT/linkedin.png" width="32px" height="32px"></a> <a href="https://www.instagram.com/a_kejariwal/"><img src="https://f0.pngfuel.com/png/605/658/black-and-white-instagram-logo-logo-black-and-white-instagram-logo-png-clip-art-thumbnail.png" width="32px" height="32px"></a> |
+<a href="https://twitter.com/a_kejariwal?s=09"><img src="https://i.ibb.co/kmgQVyW/twitter.png" width="32px" height="32px"></a> <a href="https://www.github.com/KejariwalAyush"><img src="https://cdn.iconscout.com/icon/free/png-256/github-108-438008.png" width="32px" height="32px"></a> <a href="https://www.facebook.com/ayushkejariwal.ayush"><img src="https://i.ibb.co/zmYNW4p/facebook.png" width="32px" height="32px"></a> <a href="https://www.linkedin.com/in/ayush-kejariwal-1923a2191/"><img src="https://i.ibb.co/Kx2GSrT/linkedin.png" width="32px" height="32px"></a> <a href="https://www.instagram.com/a_kejariwal/"><img src="https://f0.pngfuel.com/png/605/658/black-and-white-instagram-logo-logo-black-and-white-instagram-logo-png-clip-art-thumbnail.png" width="32px" height="32px"></a> 
 
 
 
