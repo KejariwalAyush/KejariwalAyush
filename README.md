@@ -17,6 +17,7 @@
 
 
 ![Ayush Kejariwal's github stats](https://github-readme-stats.vercel.app/api?username=kejariwalayush&show_icons=true&theme=dracula)
+![My Streak Stats](https://github-readme-streak-stats.herokuapp.com/?user=kejariwalayush&theme=tokyonight)
 
 ### Languages and Tools :computer:
 
