@@ -17,7 +17,7 @@ class Projects extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.white38, borderRadius: BorderRadius.circular(10)),
             padding: EdgeInsets.all(15),
-            margin: EdgeInsets.all(20),
+            margin: width > 670 ? EdgeInsets.all(5) : EdgeInsets.all(20),
             // width:
             //     width > 670 ? width / (projectTitle.length + 1) : width * 0.5,
             child: Hero(
@@ -147,7 +147,7 @@ class Projects extends StatelessWidget {
                       Divider(
                         thickness: 2,
                         color: Colors.white60,
-                        height: 50,
+                        height: 20,
                       ),
                     ],
                   ),
