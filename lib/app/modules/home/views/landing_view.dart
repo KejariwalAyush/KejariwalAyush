@@ -1,4 +1,6 @@
 import 'dart:ui';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +18,7 @@ class LandingView extends StatelessWidget {
         'A demonstrated history of working in the computer software industry. Skilled in Flutter.';
     return Container(
       width: context.width,
-      height: context.height,
+      height: context.height < 650 ? 675 : context.height,
       child: Stack(
         children: [
           Positioned(
@@ -71,7 +73,11 @@ class LandingView extends StatelessWidget {
                               .white
                               .make()
                               .px16()
-                              .py16(),
+                              .py16()
+                              .tooltip("kejayush29@gmail.com")
+                              .onInkTap(() => js.context.callMethod("open", [
+                                    "https://mail.google.com/mail/u/#inbox?compose=DmwnWsLKfqfbjmGRPcgXMnXkLPcqmBZntCbGnCTKtMGJJrpxrpcCwVmwvTdwdZfHHwSdrPjqJBpG"
+                                  ])),
                         ),
                         10.squareBox,
                         SocialIcons(),

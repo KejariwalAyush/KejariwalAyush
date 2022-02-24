@@ -12,7 +12,7 @@ class EndingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.width,
-      height: context.height * 0.85,
+      height: context.height < 650 ? 600 : context.height * 0.85,
       child: Stack(
         children: [
           Positioned(
@@ -74,7 +74,10 @@ class EndingView extends StatelessWidget {
                                 .color(kcPurple)
                                 .scale((context.width / 300).clamp(1, 1.8))
                                 .make()
-                                .onInkTap(() {}),
+                                .tooltip("kejayush29@gmail.com")
+                                .onInkTap(() => js.context.callMethod("open", [
+                                      "https://mail.google.com/mail/u/#inbox?compose=DmwnWsLKfqfbjmGRPcgXMnXkLPcqmBZntCbGnCTKtMGJJrpxrpcCwVmwvTdwdZfHHwSdrPjqJBpG"
+                                    ])),
                           ].row(),
                           [
                             "Download my "
@@ -89,7 +92,9 @@ class EndingView extends StatelessWidget {
                                 .color(kcPurple)
                                 .scale((context.width / 300).clamp(1, 1.8))
                                 .make()
-                                .onInkTap(() {}),
+                                .onInkTap(() => js.context.callMethod("open", [
+                                      "https://drive.google.com/file/d/1Fsl3DgCvW30dLQDN8plHBnBuUJ51TRIF/view?usp=sharing"
+                                    ])),
                           ].row()
                         ].column(crossAlignment: CrossAxisAlignment.end)),
                       ),
