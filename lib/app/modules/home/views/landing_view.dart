@@ -15,10 +15,14 @@ class LandingView extends StatelessWidget {
     final headText = "Hey, I'm";
     final nameText = "Ayush Kejariwal";
     final descText =
-        'A demonstrated history of working in the computer software industry. Skilled in Flutter.';
+        'A demonstrated history of working in the computer software industry. Skilled in Flutter.\n\nI love to CODE, DESIGN & DEBUG.';
     return Container(
       width: context.width,
-      height: context.height < 650 ? 675 : context.height,
+      height: context.height < 650
+          ? 675
+          : context.height > 900
+              ? 850
+              : context.height,
       child: Stack(
         children: [
           Positioned(
@@ -26,12 +30,12 @@ class LandingView extends StatelessWidget {
             left: -context.width * 0.1,
             child: BlurRingAnimation(size: Size(context.width, context.height)),
           ),
-          Positioned(
-            bottom: context.width * 0.01,
-            right: -context.width * 0.1,
-            child: BlurRingAnimation(
-                size: Size(context.width, context.height), sizePercent: 0.2),
-          ),
+          // Positioned(
+          //   bottom: context.width * 0.01,
+          //   right: -context.width * 0.1,
+          //   child: BlurRingAnimation(
+          //       size: Size(context.width, context.height), sizePercent: 0.2),
+          // ),
           Flex(
               direction: context.width > 675 ? Axis.horizontal : Axis.vertical,
               mainAxisAlignment: context.width > 675

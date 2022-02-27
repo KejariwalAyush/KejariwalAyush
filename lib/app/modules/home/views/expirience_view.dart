@@ -10,7 +10,11 @@ class ExperienceView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.width,
-      height: context.height < 650 ? 675 : context.height,
+      height: context.height < 650
+          ? 675
+          : context.height > 900
+              ? 850
+              : context.height,
       child: Stack(
         children: [
           Positioned(
@@ -22,14 +26,14 @@ class ExperienceView extends StatelessWidget {
                 size: Size(context.width, context.height), sizePercent: 0.3),
           ),
           Flex(
-            direction: context.width > 675 ? Axis.horizontal : Axis.vertical,
-            mainAxisAlignment: context.width > 675
+            direction: context.width > 825 ? Axis.horizontal : Axis.vertical,
+            mainAxisAlignment: context.width > 825
                 ? MainAxisAlignment.spaceBetween
                 : MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: context.width > 675 ? context.width * 0.45 : null,
+                width: context.width > 675 ? context.width * 0.35 : null,
                 height: context.width > 675 ? null : context.height * 0.25,
                 child: Image.asset("assets/images/Experience.png",
                     fit: BoxFit.contain),

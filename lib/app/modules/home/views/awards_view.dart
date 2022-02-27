@@ -12,7 +12,11 @@ class AwardsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.width,
-      height: context.height < 650 ? 675 : context.height,
+      height: context.height < 650
+          ? 675
+          : context.height > 900
+              ? 850
+              : context.height,
       child: Stack(
         children: [
           Positioned(
@@ -79,7 +83,7 @@ class AwardsView extends StatelessWidget {
                     ),
                   ),
                   Visibility(
-                    visible: context.width > 675,
+                    visible: context.width > 825,
                     child: SizedBox(
                       // width: context.width > 675 ? context.width * 0.45 : null,
                       height: context.height * 0.4,

@@ -104,7 +104,7 @@ class EndingView extends StatelessWidget {
               Expanded(
                 child: Flex(
                     direction:
-                        context.width > 675 ? Axis.horizontal : Axis.vertical,
+                        context.width > 825 ? Axis.horizontal : Axis.vertical,
                     mainAxisAlignment: context.width > 675
                         ? MainAxisAlignment.spaceBetween
                         : MainAxisAlignment.center,

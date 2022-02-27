@@ -14,7 +14,13 @@ class WhoAmIView extends StatelessWidget {
 
     return Container(
       width: context.width,
-      height: context.height < 650 ? 675 : context.height,
+      height: context.height < 650
+          ? 675
+          : context.height > 900
+              ? 850
+              : context.height > 900
+                  ? 850
+                  : context.height,
       child: Stack(
         children: [
           Positioned(
